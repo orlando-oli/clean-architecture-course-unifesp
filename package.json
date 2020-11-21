@@ -6,6 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orlando-oli/clean-architecture-course-unifesp.git"
+  },
   "author": "Orlando Oliveira",
-  "license": "BSD 3-Clause License",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "git-commit-msg-linter": "^3.0.0"
+  }
 }
