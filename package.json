@@ -13,6 +13,7 @@
   "author": "Orlando Oliveira",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "git-commit-msg-linter": "^3.0.0"
+    "git-commit-msg-linter": "^3.0.0",
+    "typescript": "^4.1.2"
   }
 }
