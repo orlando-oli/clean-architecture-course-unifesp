@@ -1,0 +1,4 @@
+API Requirements
+
+1. Add a user to the mailing list
+2. Send the gift to the user via e-mail, after having successfully added them
