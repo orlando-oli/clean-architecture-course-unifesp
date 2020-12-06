@@ -33,6 +33,6 @@ describe('In memory User repository', () => {
     const sut = new InMemoryUserRepository(users);
     const sutUsers = await sut.findAllUsers();
 
-    expect(sutUsers.length).toBe(2);
+    expect(sutUsers.length).toBe(users.length);
   });
 });
