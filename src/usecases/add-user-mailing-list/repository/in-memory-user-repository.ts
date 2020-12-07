@@ -17,22 +17,14 @@ export class InMemoryUserRepository implements UserRepository {
     }
   }
 
-  findUserByEmail(email: string): Promise<UserData> {
+  async findUserByEmail(email: string): Promise<UserData> {
     const user = this.repository.find((currentUser) => currentUser.email === email);
 
-    if (user) {
-      return new Promise((resolve) => {
-        resolve(user);
-      });
-    }
-
-    return null;
+    return user || null;
   }
 
-  findAllUsers(): Promise<UserData[]> {
-    return new Promise((resolve) => {
-      resolve(this.repository);
-    });
+  async findAllUsers(): Promise<UserData[]> {
+    return this.repository;
   }
 
   async exists(user: UserData): Promise<boolean> {
