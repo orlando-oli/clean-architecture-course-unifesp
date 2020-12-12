@@ -9,7 +9,7 @@ export class Email {
     }
 
     const [local, domain] = email.split('@');
-    if (!local) {
+    if (!local || !domain) {
       return false;
     }
 
