@@ -1,4 +1,6 @@
 API Requirements
 
 1. Add a user to the mailing list
+    - e-mail must be valid
+    - name must be valid
 2. Send the gift to the user via e-mail, after having successfully added them
