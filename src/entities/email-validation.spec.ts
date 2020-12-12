@@ -48,4 +48,10 @@ describe('Email validation', () => {
 
     expect(Email.validate(email)).toBeFalsy();
   });
+
+  test('should not accept a domain with a part larger than 63', () => {
+    const email = `any@${'d'.repeat(64)}.com`;
+
+    expect(Email.validate(email)).toBeFalsy();
+  });
 });
