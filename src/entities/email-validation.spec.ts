@@ -25,6 +25,12 @@ describe('Email validation', () => {
     expect(Email.validate(email)).toBeFalsy();
   });
 
+  test('should not accept domain larger than > 255', () => {
+    const email = `local@${'d'.repeat(128)}.${'d'.repeat(127)}`;
+
+    expect(Email.validate(email)).toBeFalsy();
+  });
+
   test('should not accept email-local larger than > 64', () => {
     const email = `${'l'.repeat(65)}@mail.com`;
 
