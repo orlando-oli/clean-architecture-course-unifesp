@@ -54,4 +54,10 @@ describe('Email validation', () => {
 
     expect(Email.validate(email)).toBeFalsy();
   });
+
+  test('should not accept locals with invalid characters', () => {
+    const email = `any @mail.com`;
+
+    expect(Email.validate(email)).toBeFalsy();
+  });
 });
