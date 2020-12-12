@@ -60,4 +60,22 @@ describe('Email validation', () => {
 
     expect(Email.validate(email)).toBeFalsy();
   });
+
+  test('should not accept locals with ..', () => {
+    const email = `any..email@mail.com`;
+
+    expect(Email.validate(email)).toBeFalsy();
+  });
+
+  test('should not accept locals with "." before "@"', () => {
+    const email = `any.@mail.com`;
+
+    expect(Email.validate(email)).toBeFalsy();
+  });
+
+  test('should not accept locals without "@"', () => {
+    const email = `anymail.com`;
+
+    expect(Email.validate(email)).toBeFalsy();
+  });
 });
