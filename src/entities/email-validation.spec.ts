@@ -18,4 +18,10 @@ describe('Email validation', () => {
 
     expect(Email.validate(email)).toBeTruthy();
   });
+
+  test('should not accept local len > 64', () => {
+    const email = `${'l'.repeat(65)}@mail.com`;
+
+    expect(Email.validate(email)).toBeFalsy();
+  });
 });
