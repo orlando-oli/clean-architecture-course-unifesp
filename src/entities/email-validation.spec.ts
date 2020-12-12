@@ -19,7 +19,13 @@ describe('Email validation', () => {
     expect(Email.validate(email)).toBeTruthy();
   });
 
-  test('should not accept local len > 64', () => {
+  test('should not accept email larger than > 64', () => {
+    const email = `${'l'.repeat(64)}@${'d'.repeat(128)}.${'d'.repeat(127)}`;
+
+    expect(Email.validate(email)).toBeFalsy();
+  });
+
+  test('should not accept email-local larger than > 64', () => {
     const email = `${'l'.repeat(65)}@mail.com`;
 
     expect(Email.validate(email)).toBeFalsy();
