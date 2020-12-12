@@ -21,6 +21,11 @@ export class Email {
       return false;
     }
 
+    const splitDomain = domain.split('.');
+    if (splitDomain.some((part) => part.length > 63)) {
+      return false;
+    }
+
     return true;
   }
 }
