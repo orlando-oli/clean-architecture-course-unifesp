@@ -17,10 +17,19 @@ describe('User domain class', () => {
 
     expect(error).toEqual(left(new InvalidNameError()));
   });
+
   test('should not create user with invalid name (too long)', () => {
     const invalidName = '0'.repeat(257);
     const error = User.create({ name: invalidName, email: 'any@mail.com' });
 
     expect(error).toEqual(left(new InvalidNameError()));
+  });
+
+  test('should create user with valid data', () => {
+    const validName = 'any_name';
+    const validEmail = 'any@mail.com';
+    const user: User = User.create({ name: validName, email: validEmail }).value as User;
+    expect(user.name.value).toEqual(validName);
+    expect(user.email.value).toEqual(validEmail);
   });
 });
