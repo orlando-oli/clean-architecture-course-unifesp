@@ -1,4 +1,4 @@
-import { UserData } from './user-data';
+import { UserData } from '../../entities/user-data';
 
 describe('Add user to the mailing list use case', () => {
   test('should add user with complete data to the mailing list', async () => {
