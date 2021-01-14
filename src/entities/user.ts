@@ -6,6 +6,15 @@ import { Name } from './name';
 import { UserData } from './user-data';
 
 export class User {
+  public readonly name: Name;
+
+  public readonly email: Email;
+
+  private constructor(name: Name, email: Email) {
+    this.name = name;
+    this.email = email;
+  }
+
   static create(userData: UserData): Either<InvalidNameError | InvalidEmailError, User> {
     const emailOrError = Email.create(userData.email);
     const nameOrError = Name.create(userData.name);
@@ -17,7 +26,9 @@ export class User {
     if (emailOrError.isLeft()) {
       return left(new InvalidEmailError());
     }
+    const name: Name = emailOrError.value as Name;
+    const email: Email = emailOrError.value as Email;
 
-    return right(emailOrError.value);
+    return right(new User(name, email));
   }
 }
