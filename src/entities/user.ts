@@ -26,7 +26,7 @@ export class User {
     if (emailOrError.isLeft()) {
       return left(new InvalidEmailError());
     }
-    const name: Name = emailOrError.value as Name;
+    const name: Name = nameOrError.value as Name;
     const email: Email = emailOrError.value as Email;
 
     return right(new User(name, email));
