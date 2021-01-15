@@ -7,7 +7,7 @@ module.exports = {
   clearMocks: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!**/test/**', '!**/config/**'],
   // A list of paths to directories that Jest should use to search for files in
   roots: ['<rootDir>/src'],
   testEnvironment: 'node',
