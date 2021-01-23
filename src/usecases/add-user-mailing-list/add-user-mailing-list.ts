@@ -1,8 +1,8 @@
 /* eslint-disable class-methods-use-this */
-import { User, UserData } from '../../entities';
-import { InvalidEmailError, InvalidNameError } from '../../entities/errors';
-import { Either, left, right } from '../../shared';
-import { UserRepository } from './ports';
+import { User, UserData } from '@/entities';
+import { InvalidEmailError, InvalidNameError } from '@/entities/errors';
+import { Either, left, right } from '@/shared';
+import { UserRepository } from '@/usecases/add-user-mailing-list/ports';
 
 export class AddUserToMailingList {
   private readonly userRepo: UserRepository;
