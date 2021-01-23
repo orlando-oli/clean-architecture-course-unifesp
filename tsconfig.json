@@ -4,6 +4,9 @@
     "module": "commonJS",
     "target": "ESNext",
     "esModuleInterop": true,
-    "allowJs": true
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": { "@/*": ["src/*"], "@test/*": ["test/*"] },
+    "moduleResolution": "Node"
   }
 }
