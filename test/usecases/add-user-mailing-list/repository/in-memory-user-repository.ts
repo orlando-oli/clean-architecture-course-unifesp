@@ -1,7 +1,7 @@
-import { UserData } from '../../../../src/entities/user-data';
-import { UserRepository } from '../../../../src/usecases/add-user-mailing-list/ports/user-repository';
-/* eslint-disable class-methods-use-this */
+import { UserData } from '../../../../src/entities';
+import { UserRepository } from '../../../../src/usecases/add-user-mailing-list/ports';
 
+/* eslint-disable class-methods-use-this */
 export class InMemoryUserRepository implements UserRepository {
   private repository: UserData[];
 

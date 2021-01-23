@@ -1,7 +1,7 @@
-import { InMemoryUserRepository } from './repository/in-memory-user-repository';
-import { UserData } from '../../../src/entities/user-data';
-import { AddUserToMailingList } from '../../../src/usecases/add-user-mailing-list/add-user-mailing-list';
-import { UserRepository } from '../../../src/usecases/add-user-mailing-list/ports/user-repository';
+import { UserData } from '../../../src/entities';
+import { AddUserToMailingList } from '../../../src/usecases';
+import { UserRepository } from '../../../src/usecases/add-user-mailing-list/ports';
+import { InMemoryUserRepository } from './repository';
 
 describe('Add user to the mailing list use case', () => {
   test('should add user with complete data to the mailing list', async () => {
