@@ -35,7 +35,8 @@
       "node": {
         "paths": ["src"],
         "extensions": [".js", ".ts"]
-      }
+      },
+      "typescript": {}
     }
   }
 }
