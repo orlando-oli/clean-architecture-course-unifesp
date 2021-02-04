@@ -12,7 +12,7 @@ describe('Add user to the mailing list use case', () => {
 
     const name = 'any_name';
     const email = 'any@email.com';
-    const response = await usecase.addUserToMailingList({ name, email });
+    const response = await usecase.perform({ name, email });
     const user = repo.findUserByEmail('any@email.com');
     expect((await user).name).toBe('any_name');
     expect(response.value.name).toBe('any_name');
@@ -27,8 +27,7 @@ describe('Add user to the mailing list use case', () => {
     const name = 'any_name';
     const invalidEmail = 'invalid_email';
 
-    const response = (await usecase.addUserToMailingList({ name, email: invalidEmail }))
-      .value as Error;
+    const response = (await usecase.perform({ name, email: invalidEmail })).value as Error;
     const user = await repo.findUserByEmail('any@email.com');
     expect(user).toBeNull();
     expect(response.name).toEqual('InvalidEmailError');
@@ -43,8 +42,7 @@ describe('Add user to the mailing list use case', () => {
     const invalidName = '';
     const email = 'any@mail.com';
 
-    const response = (await usecase.addUserToMailingList({ name: invalidName, email }))
-      .value as Error;
+    const response = (await usecase.perform({ name: invalidName, email })).value as Error;
     const user = await repo.findUserByEmail(email);
     expect(user).toBeNull();
     expect(response.name).toEqual('InvalidNameError');
