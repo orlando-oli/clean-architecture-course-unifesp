@@ -1,9 +1,9 @@
 /* eslint-disable consistent-return */
 import { UserData } from '@/entities';
 import { HttpRequest } from '@/web-controllers/ports/http-request';
-import { created } from './util/http-helper';
 import { AddUserToMailingList } from '../usecases';
 import { HttpResponse } from './ports';
+import { badRequest, created } from './util/http-helper';
 
 export class AddUserController {
   private readonly usecase: AddUserToMailingList;
@@ -18,6 +18,10 @@ export class AddUserController {
 
     if (response.isRight()) {
       return created(response.value);
+    }
+
+    if (response.isLeft()) {
+      return badRequest(response.value);
     }
   }
 }
