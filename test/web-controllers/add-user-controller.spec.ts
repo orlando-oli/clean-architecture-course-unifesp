@@ -6,7 +6,7 @@ import { AddUserToMailingList } from '@/usecases';
 import { UserRepository } from '@/usecases/add-user-mailing-list/ports';
 import { AddUserController } from '@/web-controllers/';
 import { HttpRequest, HttpResponse } from '@/web-controllers/ports/';
-import { InMemoryUserRepository } from '@test/usecases/add-user-mailing-list/repository';
+import { InMemoryUserRepository } from '@/usecases/add-user-mailing-list/repository';
 import { InvalidEmailError } from '../../src/entities/errors/invalid-email-error';
 import { InvalidNameError } from '../../src/entities/errors/invalid-name-error';
 import { UseCase } from '../../src/usecases/ports/use-cases';

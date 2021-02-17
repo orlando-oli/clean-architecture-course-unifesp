@@ -1,4 +1,4 @@
-import { InMemoryUserRepository } from '../../../test/usecases/add-user-mailing-list/repository/in-memory-user-repository';
+import { InMemoryUserRepository } from '../../usecases/add-user-mailing-list/repository/in-memory-user-repository';
 import { AddUserToMailingList } from '../../usecases/add-user-mailing-list/add-user-mailing-list';
 import { AddUserController } from '../../web-controllers/add-user-controller';
 
