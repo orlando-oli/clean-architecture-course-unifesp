@@ -1,6 +1,6 @@
+import 'module-alias/register';
 import { MongoHelper } from '@/external/repositories/mongodb/helper';
 import { app } from '@/main/config/app';
-import 'module-alias/register';
 
 MongoHelper.connect('mongodb://localhost')
   .then(async () => {
