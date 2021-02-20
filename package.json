@@ -20,8 +20,10 @@
   "author": "Orlando Oliveira",
   "license": "BSD-3-Clause",
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.2.3",
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.15",
+    "@types/mongodb": "^3.6.8",
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.14.0",
@@ -43,7 +45,8 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "module-alias": "^2.2.2"
+    "module-alias": "^2.2.2",
+    "mongodb": "^3.6.4"
   },
   "_moduleAliases": {
     "@": "dist"
