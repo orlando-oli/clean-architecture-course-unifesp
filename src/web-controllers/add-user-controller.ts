@@ -32,12 +32,9 @@ export class AddUserController {
       const response = await this.usecase.perform(userData);
 
       if (response.isRight()) {
-        const newUserResponse = {
-          name: response.value.name,
-          email: response.value.email,
-        };
+        const { name, email } = response.value;
 
-        return created(newUserResponse);
+        return created({ name, email });
       }
 
       if (response.isLeft()) {
